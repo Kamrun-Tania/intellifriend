@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-8 xl-100">
+            <div class="row"> 
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                               <div class="row"> 
+                                  <div class="col-sm-8">
+                                    <label class="form-label" for="form1">Search</label>
+                                    <input id="search-input" type="text"   [(ngModel)]='listFilter' class="form-control" />
+                                  
+                   
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button id="search-button" style="margin-top:30px;" type="button" class="btn btn-primary">
+                                        <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button class="btn btn-md btn-outline-primary" style="border-top-left-radius: 5px; margin-top: 30px;">
+                                          <i class="fa fa-user"></i>Add Company</button>
+                                      </div>
+                              </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12"  *ngFor='let company of filteredCompanies'> 
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                               
+                                    <div class="col-sm-3">
+                                        <a [routerLink]="['../companies', company.companyName]">
+                                        <img 
+                                        [src]='company.imageUrl'
+                                        [title]='company.companyName'
+                                        [style.width.px]='imageWidth'
+                                        [style.margin.px]='imageMargin'></a>
+
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <a [routerLink]="['../companies', company.companyName]">
+                                        <h3> {{ company.companyName }}</h3></a>
+                                    </div>
+                                
+                                <div class="col-sm-1">
+                                    
+                                    <button type=button class="btn btn-primary" (click)="deleteCompany(company.companyName)"><i class="fa fa-trash fa-2x"> </i></button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+</div>

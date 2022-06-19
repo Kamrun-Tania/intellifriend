@@ -1,0 +1,38 @@
+
+    
+    
+    {{pageTitle + ': ' + company?.companyName}}
+
+  
+  <div class="container fluid">
+
+  <img class='center-block img-responsive'
+             [style.width.px]='50'
+             [style.margin.px]='2'
+             [src]='company.imageUrl'
+             [title]='company.companyName'>
+  <button class="btn " style="background: #D9D9D9;"> <i class="fa fa-edit"> </i> </button>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-5">
+      <input class="form-control" style="width: 80%; float: left;" type="text" value="{{company.companyName}}" name="companyName"/>
+      <button class="btn" style="float: left ; background: #D9D9D9;"><i class="fa fa-edit"> </i> </button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+  <div class="col-md-8">
+    <textarea class="form-control" style="width: 80%; float: left; " rows="3" name="description"> {{company.description}} </textarea>
+    <button class="btn " style="background: #D9D9D9;"><i class="fa fa-edit"> </i> </button>
+  </div>
+    <div class="col-md-1"></div>
+  </div>
+  <br>
+  <button class="btn" style="background: #28A745; color: #fff;"> Download DB Backup </button>
+
+  
+
+
+    
+

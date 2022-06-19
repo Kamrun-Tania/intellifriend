@@ -1,0 +1,106 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-8 xl-100">
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body text-danger">
+                            <h3 class="mt-0 mb-0 f-w-600">
+                                {{ timeboxData.arivelTime }}
+                            </h3>
+                            <p>ARRIVAL TIME</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body text-success">
+                            <h3 class="mt-0 mb-0 f-w-600">
+                                {{ timeboxData.leftTime }}
+                            </h3>
+                            <p>LEFT TIME</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body text-info">
+                            <h3 class="mt-0 mb-0 f-w-600">
+                                {{ timeboxData.spanTime }}
+                            </h3>
+                            <p>TIME SPAN</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body text-success">
+                            <h3 class="mt-0 mb-0 f-w-600">
+                                {{ timeboxData.activeTime }}
+                            </h3>
+                            <p>ACTIVE TIME</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>PRODUCTIVITY BAR</h5>
+                        </div>
+
+                        <div class="card-body">
+                            <div id="bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row" *ngIf="display">
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>PRODUCTIVITY BAR</h5>
+                        </div>
+                        <div class="card-body">
+
+
+                            <div class="flot-chart-container">
+                                <div class="flot-chart-placeholder ngx-chart-direction">
+                                    <!-- <ngx-charts-bar-vertical-stacked [view]="view" [scheme]="colorScheme"
+                                        [results]="productivityData" [gradient]="gradient" [xAxis]="showXAxis"
+                                        [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+                                        [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel"
+                                        [yAxisLabel]="yAxisLabel" [animations]="animations" (select)="onSelect($event)"
+                                        [trimXAxisTicks]="true" [barPadding]="'1'">
+                                    </ngx-charts-bar-vertical-stacked> -->
+
+
+                                    <!-- <ngx-charts-bar-vertical-stacked [scheme]="barChartColorScheme" [results]="barChartData"
+                                        [gradient]="true" [xAxis]="true" [yAxis]="true"
+                                        [legend]="false" [showXAxisLabel]="true"
+                                        [showYAxisLabel]="true" [xAxisLabel]="'Country'"
+                                        [yAxisLabel]="'Population'" [roundEdges]="false" (select)="onSelect($event)">
+                                    </ngx-charts-bar-vertical-stacked> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="card-body">
+                            <div class="card-body chart-block">
+                                <google-chart [data]="columnChart" [dynamicResize]="dynamicResize"></google-chart>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

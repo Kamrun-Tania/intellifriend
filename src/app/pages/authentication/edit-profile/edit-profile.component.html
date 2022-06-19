@@ -1,0 +1,19 @@
+<div>
+    <h4>{{user.firstname}}</h4>
+    <h4>{{user.lastname}}</h4>
+    <h4>{{user.email}}</h4>
+
+    <div>
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+            <div >
+              <label>Email</label>
+              <input formControlName="firstname"  required="">
+            </div>
+            <div>
+              <button type="submit">
+                  <span>Change</span>
+              </button>  
+            </div>
+        </form>
+    </div>  
+</div>

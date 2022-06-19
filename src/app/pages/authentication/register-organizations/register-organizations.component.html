@@ -1,0 +1,225 @@
+<div class="container tb-10">
+    <div class="authentication-main p-0">
+        <div class="row">
+          <div class="col-sm-12 p-0">
+            <div style="width:100%; min-height: 100%;" >
+              <div class="p-4 m-0">
+                <div class="text-center"><img src="assets/images/intellifriend-logo.png" alt=""></div>
+                    <div class="card mt-4 p-4" style="width:100% ; min-height: 480px;" >
+
+    <form (ngSubmit)="submit()"  [formGroup]="multistep" >
+
+    <!-- First Page -->
+
+      <div *ngIf="step == 1"  formGroupName="organizationDetails">
+        <div><strong>Step 1/4</strong></div>    
+        <div class="row">        
+          <div class="col p-1"><div class="card mt-1 " style="background-color: greenyellow; padding: 2px 0px;" ></div></div>
+          <div class="col p-1"><div class="card mt-1" ></div></div>
+          <div class="col p-1"><div class="card mt-1" ></div></div>
+          <div class="col p-1"><div class="card mt-1" ></div></div>
+        </div>
+        <h1 class="text-center "><strong>Tell us about your organization</strong></h1>
+        <h6 class="text-center p-3">Please, tell us more about the organization behind your IntelliFriend account</h6>
+        
+        <div style="max-width:500px; margin: 20px auto;">
+          
+          <div class="form-group">
+            <label for="orgName"><strong>What's the name of your organization?</strong></label>
+            <input type="text" class="form-control" formControlName="orgName"  id="orgName" aria-describedby="emailHelp"
+              placeholder="Enter the name of your organization">
+            <span class="text-danger" *ngIf="submitted && organizationDetails.orgName.errors?.required">
+                Please enter your organization name.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="teamMemberCount"><strong>How many team members will use IntelliFriend?</strong></label>
+            <input type="number" class="form-control" formControlName="teamMemberCount"
+              id="teamMemberCount" placeholder="Choose team member count">
+            <span class="text-danger" *ngIf="submitted && organizationDetails.teamMemberCount.errors?.required">
+                Please enter your team member count.</span>  
+          </div>
+
+          <div class="form-group">
+            <label for="phoneNumber"><strong>What's your phone number? [Optional]</strong></label>
+            <input type="text" class="form-control" formControlName="phoneNumber"
+              id="phoneNumber" placeholder="Enter your phone number [Optional]">
+            <span class="text-danger" *ngIf="submitted && organizationDetails.phoneNumber.errors?.required">
+                Please enter your organization phone number.</span>  
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Second Page -->
+
+      <div *ngIf="step == 2" formGroupName="teamSetUp" >
+        <div><strong>Step 2/4</strong></div>    
+        <div class="row">        
+          <div class="col p-1"><div class="card mt-1" style="background-color: greenyellow; padding: 2px 0px;" ></div></div>
+          <div class="col p-1"><div class="card mt-1" style="background-color: greenyellow; padding: 2px 0px;" ></div></div>
+          <div class="col p-1"><div class="card mt-1" ></div></div>
+          <div class="col p-1"><div class="card mt-1" ></div></div>
+        </div>
+        <h1 class="text-center"><strong> Let's set up your teams</strong></h1>
+        <h6 class="text-center p-3">To make time tracking easier to navigate, you can divide your employees into teams. Select from the list or add your own</h6>
+        
+        <div class="form-group" style="max-width:700px; margin: 20px auto; padding-left: 10%;">
+
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team1" id="checkbox1" value="Developers">
+                        <label class="form-check-label" for="checkbox1">Developers</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team2" id="checkbox2" value="Support">
+                        <label class="form-check-label" for="checkbox2">Support</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team3" id="checkbox3" value="IT">
+                        <label class="form-check-label" for="checkbox3">IT</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team4" id="checkbox4" value="Management">
+                        <label class="form-check-label" for="checkbox4">Management</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team5" id="checkbox5" value="Marketing">
+                        <label class="form-check-label" for="checkbox5">Marketing</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team6" id="checkbox6" value="Production">
+                        <label class="form-check-label" for="checkbox6">Production</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team7" id="checkbox7" value="Admin">
+                        <label class="form-check-label" for="checkbox7">Admin</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team8" id="checkbox8" value="Designers">
+                        <label class="form-check-label" for="checkbox8">Designers</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team9" id="checkbox9" value="HR">
+                        <label class="form-check-label" for="checkbox9">HR</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team10" id="checkbox10" value="Sales">
+                        <label class="form-check-label" for="checkbox10">Sales</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team11" id="checkbox11" value="Accounting">
+                        <label class="form-check-label" for="checkbox11">Accounting</label>
+                      </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 mb-4">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" formControlName="team12" id="checkbox12" value="QA">
+                        <label class="form-check-label" for="checkbox12">QA</label>
+                      </div>
+                </div>
+                </div>
+        </div>
+        </div>
+
+        <!-- Third Page -->
+<!-- 
+      <div *ngIf="step == 3" formGroupName="teamMemberDetails">
+        <h1>Invite your team members to start tracking their time with IntelliFriend</h1>
+        <h6>Add team members and assign them to a team, Skip this step if you want to do this later.</h6>
+        <div class="form-group">
+          <input type="text" class="form-control" formControlName="team-member-name"  id="team-member-name" 
+            placeholder="Team member's full name">  
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName="team-member-email"  id="team-member-email" aria-describedby="emailHelp"
+              placeholder="Email">
+          </div>
+          <div class="form-group">
+            <select class="form-control" formControlName="with-or-without-team">
+              <option value="null">Select Only One</option>
+              <option value="without-team">Without team</option>
+              <option value="with-team">With team</option>
+            </select>
+          </div>
+      </div> -->
+
+
+      <!-- Third Page -->
+
+      <div *ngIf="step == 3">
+        <div><strong>Step 3/4</strong></div>    
+        <div class="row">        
+          <div class="col p-1"><div class="card mt-1" style="background-color: greenyellow; padding: 2px 0px;" ></div></div>
+          <div class="col p-1"><div class="card mt-1" style="background-color: greenyellow; padding: 2px 0px;" ></div></div>
+          <div class="col p-1"><div class="card mt-1" style="background-color: greenyellow; padding: 2px 0px;" ></div></div>
+          <div class="col p-1"><div class="card mt-1" ></div></div>
+        </div>
+        <div class="text-center p-2"><img src="assets/images/intellifriend-logo.png" alt=""></div>
+        <h1 class="text-center mt-2"  >Download the IntelliFriend desktop app</h1>
+        <h6 class="text-center p-3">This is necessary to access all IntelliFriend features, oversee the dashboard and customize setting, Available for Windows.</h6>
+        <div class="text-center p-2 ">
+          <a class="btn  btn-success m-2" >Download for Windows</a>
+          <p>Certified app Control what gets tracked Uninstall anytime</p>
+        </div>
+      </div>
+
+
+      <!-- Fifth Page -->
+
+      <div *ngIf="step == 4">
+        <div><strong>Step 4/4</strong></div>    
+        <div class="row">        
+          <div class="col p-1"><div class="card mt-1" style="background-color: greenyellow; padding: 2px 0px;" ></div></div>
+          <div class="col p-1"><div class="card mt-1" style="background-color: greenyellow; padding: 2px 0px;" ></div></div>
+          <div class="col p-1"><div class="card mt-1" style="background-color: greenyellow; padding: 2px 0px;" ></div></div>
+          <div class="col p-1"><div class="card mt-1" style="background-color: greenyellow; padding: 2px 0px;" ></div></div>
+        </div>
+        <h1 class="text-center">Thanks for joining IntelliFriend - you're good to go !</h1>
+        <h6 class="text-center p-3">Creating your profile</h6>
+        <div class="text-center p-2 ">
+          <a class="btn  btn-success m-2" [routerLink]="['/dashboard/user']">Go to dashboard</a>
+        </div>
+      </div>
+
+      <br/>
+
+      <div  style="bottom: 30px; position: absolute; right: 30px; " >
+        <a class="btn btn-primary mx-2" *ngIf="step != 1" (click)="previous()">Previous</a>
+        <a class="btn btn-secondary mx-2" *ngIf="step == 3 || step == 2" (click)="skip()">Skip</a>
+        <!-- <button type="submit" class="btn btn-primary mx-2" *ngIf="step == 3">Add team members</button> -->
+        <button type="submit" class="btn btn-success mx-2" style="margin-left: 50px;" *ngIf="step == 1 || step == 2">Continue</button>
+      </div>
+      <br>
+      <!-- <pre>{{multistep.value | json}}</pre> -->
+      
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>

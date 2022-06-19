@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <!-- sign up page start-->
+  <div class="authentication-main">
+    <div class="row">
+      <div class="col-sm-12 p-0">
+        <div class="auth-innerright">
+          <div class="authentication-box">
+            <div class="text-center"><img src="assets/images/intellifriend-logo.png" alt=""></div>
+            <div class="card mt-4 p-4">
+              <h4 class="text-center">SIGN UP</h4>
+              <h6 class="text-center">Enter your Username and Password For Signup</h6>
+              <form class="theme-form" [formGroup]="regForm" (ngSubmit)="onSubmit()">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-form-label">First Name</label>
+                      <input class="form-control" type="text" formControlName="firstname" required="">
+                      <div *ngIf="regForm.controls.firstname.touched && regForm.controls.firstname.errors?.required"
+                        class="text text-danger mt-1">
+                        First name is required
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-form-label">Last Name</label>
+                      <input class="form-control" type="text" formControlName="lastname" required="">
+                      <div *ngIf="regForm.controls.lastname.touched && regForm.controls.lastname.errors?.required"
+                        class="text text-danger mt-1">
+                        Last name is required
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label pt-0">Email</label>
+                  <input class="form-control" formControlName="email" type="email" required="">
+                  <div *ngIf="regForm.controls.email.touched && regForm.controls.email.errors?.required"
+                    class="text text-danger mt-1">
+                    Email is required
+                  </div>
+                  <div *ngIf="regForm.controls.email.touched && regForm.controls.email.errors?.email"
+                    class="text text-danger mt-1">
+                    Invalid Email
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Password</label>
+                  <input class="form-control" type="password" formControlName="password" required="">
+                  <div *ngIf="regForm.controls.password.touched && regForm.controls.password.errors?.required"
+                    class="text text-danger mt-1">
+                    Password is required
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col-sm-4">
+                    <button class="btn btn-primary"  [disabled]="!regForm.valid || authService.showLoader" type="submit">Sign Up</button>
+                  </div>
+                  <div class="col-sm-8">
+                    <div class="text-left mt-2 m-l-20">Are you already user?  <a class="btn-link text-capitalize"
+                        [routerLink]="['/authentication/login']">Login</a></div>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sign up page ends-->
+</div>
